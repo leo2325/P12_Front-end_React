@@ -1,6 +1,22 @@
-# Getting Started with Create React App
+######WEALTH HEALTH - Janvier 2024
+#####Projet 14 - Faites passer une librairie jQuery vers React. ![Static Badge](https://img.shields.io/badge/Openclassrooms-8A2BE2)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+###Author : 
+#Léo Timbert (student).
+
+###Technologies :
+![Static Badge](https://img.shields.io/badge/Made%20with-Javascript-green)
+    ![Static Badge](https://img.shields.io/badge/react%2018.2.0-blue)
+    ![Static Badge](https://img.shields.io/badge/redux%205.0.1-lightblue)
+
+###Environment :
+    ![Static Badge](https://img.shields.io/badge/Github-lightgrey) : https://github.com/leo2325/P12_Front-end_React/tree/main/HRNet
+    ![Static Badge](https://img.shields.io/badge/recommended%20editor-VS%20Code-white)
+
+###Installation
+##Prerequisites
+    ![Static Badge](https://img.shields.io/badge/npm-v%209.5.0-white)
+    
 
 ## Available Scripts
 
@@ -68,3 +84,62 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## EmployeesList.json
+
+
+
+## Les différents composants
+
+### Create Employee Form
+
+Le formulaire contient les différents input à remplir pour l'inscription.
+
+### Current employees Array
+
+### Search Bar
+
+
+## Fonctions : 
+
+
+onSubmit()
+    -vérification que les input ont bien été renseigné : 
+        si non : message d'erreur
+        si oui : createNewEmployee() , affichage d'une modale de confirmation.
+            à la fermeture de cette modale : redirection vers CurrentEmployeeArray.
+
+createNewEmployee()
+    -mis à jour du state de EmployeesList.json (ajout d'un nouvel employé à la liste)
+    -mis à jour du state de CurrentEmployeeArray (affichage du composant regénéré)
+
+
+sortEmployee() 
+    -appliquée au composant CurrentEmployeeArray <th>
+        -selon le <th> cliqué (par string ou number)
+        -l'icône change selon le tri
+
+searchEmployee()
+    Fonction de recherche d'un employé.
+    -> Appliqué à la barre de recherche
+    -> Agit sur CurrentEmployeeArray
+        -les employés visible doivent contenir 
