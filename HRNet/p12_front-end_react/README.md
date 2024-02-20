@@ -1,8 +1,11 @@
 # WEALTH HEALTH - Janvier 2024
-## Projet 14 - Faites passer une librairie jQuery vers React. ![Static Badge](https://img.shields.io/badge/Openclassrooms-8A2BE2)
+## Projet 14 - Faites passer une librairie jQuery vers React. 
+![Static Badge](https://img.shields.io/badge/Openclassrooms-8A2BE2)
+
 
 ### Author : 
 ##### Léo Timbert (student).
+
 
 ### Technologies :
 ![Static Badge](https://img.shields.io/badge/Made%20with-Javascript-green)
@@ -11,13 +14,18 @@
 
 ![Static Badge](https://img.shields.io/badge/redux%205.0.1-lightblue)
 
+
 ### Environment :
 ![Static Badge](https://img.shields.io/badge/Github-lightgrey) : https://github.com/leo2325/P12_Front-end_React/tree/main/HRNet
+
 ![Static Badge](https://img.shields.io/badge/recommended%20editor-VS%20Code-white)
+
 
 ### Installation
 #### Prerequisites
 ![Static Badge](https://img.shields.io/badge/npm-v%209.5.0-white)
+
+
 
 
 ## Available Scripts
