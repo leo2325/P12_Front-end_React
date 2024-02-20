@@ -6,7 +6,9 @@
 
 ### Technologies :
 ![Static Badge](https://img.shields.io/badge/Made%20with-Javascript-green)
+
 ![Static Badge](https://img.shields.io/badge/react%2018.2.0-blue)
+
 ![Static Badge](https://img.shields.io/badge/redux%205.0.1-lightblue)
 
 ### Environment :
