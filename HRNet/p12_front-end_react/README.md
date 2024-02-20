@@ -6,16 +6,16 @@
 
 ### Technologies :
 ![Static Badge](https://img.shields.io/badge/Made%20with-Javascript-green)
-    ![Static Badge](https://img.shields.io/badge/react%2018.2.0-blue)
-    ![Static Badge](https://img.shields.io/badge/redux%205.0.1-lightblue)
+![Static Badge](https://img.shields.io/badge/react%2018.2.0-blue)
+![Static Badge](https://img.shields.io/badge/redux%205.0.1-lightblue)
 
 ### Environment :
-    ![Static Badge](https://img.shields.io/badge/Github-lightgrey) : https://github.com/leo2325/P12_Front-end_React/tree/main/HRNet
-    ![Static Badge](https://img.shields.io/badge/recommended%20editor-VS%20Code-white)
+![Static Badge](https://img.shields.io/badge/Github-lightgrey) : https://github.com/leo2325/P12_Front-end_React/tree/main/HRNet
+![Static Badge](https://img.shields.io/badge/recommended%20editor-VS%20Code-white)
 
 ### Installation
 #### Prerequisites
-    ![Static Badge](https://img.shields.io/badge/npm-v%209.5.0-white)
+![Static Badge](https://img.shields.io/badge/npm-v%209.5.0-white)
 
 
 ## Available Scripts
@@ -104,11 +104,9 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 
 
-## EmployeesList.json
+### EmployeesList.json
 
-
-
-## Les différents composants
+### Les différents composants
 
 ### Create Employee Form
 
@@ -119,8 +117,7 @@ Le formulaire contient les différents input à remplir pour l'inscription.
 ### Search Bar
 
 
-## Fonctions : 
-
+#### Fonctions : 
 
 onSubmit()
     -vérification que les input ont bien été renseigné : 

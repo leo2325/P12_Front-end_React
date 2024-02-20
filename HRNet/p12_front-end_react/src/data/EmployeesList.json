@@ -1,0 +1,25 @@
+[
+    {
+      "FirstName": "John",
+      "LastName": "Doe",
+      "StartDate": "2023-01-01",
+      "Department": "IT",
+      "DateOfBirth": "1990-01-01",
+      "Street": "123 Main St",
+      "City": "New York",
+      "State": "NY",
+      "ZipCode": "10001"
+    },
+    {
+        "FirstName": "Léo",
+        "LastName": "Tim",
+        "StartDate": "2024-08-08",
+        "Department": "IT",
+        "DateOfBirth": "1988-11-01",
+        "Street": "3 rue de la pompe",
+        "City": "Paris",
+        "State": "NY",
+        "ZipCode": "75013"
+      }
+  ]
+  

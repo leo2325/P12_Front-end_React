@@ -1,24 +1,14 @@
 import React from "react";
-
-import { Link, useNavigate } from 'react-router-dom';
-import Logo from '../Logo'
 // Import du tableau statesList
 import statesList from '../../data/statesList.js';
-
+import departmentList from '../../data/departmentList.js'
 import '../../style/pages.css'
 
-function CreateEmployee() {
+function CreateEmployeeForm() {
     return (
-      <div className="pageContaine">
-        <header className="page-header">
-            <Logo />
-            <Link to='/Employees'>
-                <button>View current employees</button>
-            </Link>
-        </header>
-        <body>
+      <div>
             <form>
-                <h2>Create Employee</h2>
+               
                 <section id="userName">
                     <div className="edit-input">
                         <label htmlFor="firstname"></label>
@@ -38,21 +28,19 @@ function CreateEmployee() {
                             //onChange={(e) => setLastName(e.target.value)}
                         />     
                     </div>
-                    <div className="edit-input">
-                        <label htmlFor="birthdate"></label>
+                    <div className="edit-input editDate-input">
+                        <label htmlFor="birthdate">Birthdate</label>
                         <input
                             type="date"
                             id="birthdate" 
-                            placeholder= 'Date of birth'
                             //onChange={(e) => setBirthDate(e.target.value)}
                         />     
                     </div>
-                    <div className="edit-input">
-                        <label htmlFor="startdate"></label>
+                    <div className="edit-input editDate-input">
+                        <label htmlFor="startdate">Startdate</label>
                         <input
                             type="date"
                             id="startdate" 
-                            placeholder= 'Start date'
                             //onChange={(e) => setStartDate(e.target.value)}
                         />     
                     </div>
@@ -91,6 +79,7 @@ function CreateEmployee() {
                                 ))}
                             </select>     
                         </div>
+
                         <div className="edit-input">
                             <label htmlFor="zipcode"></label>
                             <input
@@ -104,24 +93,28 @@ function CreateEmployee() {
 
                 <section id="userDepartment">
                     <h3>Department : </h3>
-                        
-                    <div className="edit-input">
-                        <label htmlFor="department"></label>
-                        <input
-                            type="text"
-                            id="department" 
-                            placeholder= 'Department'
-                            //onChange={(e) => setDepartment(e.target.value)}
-                        />     
-                    </div>
-                </section>   
-            </form>
-        </body>
-        <footer>
 
-        </footer>
+                    <div className="edit-input">
+                            <label htmlFor="dpartment"></label>
+                            <select
+                                type="text"
+                                id="department"
+                                //onChange={(e) => setDepartment(e.target.value)}
+                            >
+                                {/*map() pour générer une option pour chaque departement */}
+                                {departmentList.map((department, index) => (
+                                    <option key={index} value={department.name}>{department.name}</option>
+                                ))}
+                            </select>
+                        </div>
+                </section>  
+                
+                {/* Intégrer ici le bouton submit*/}
+                <button type="submit" name="submit" id="submit">Submit</button>
+
+            </form>
       </div>
     );
   }
   
-  export default CreateEmployee;
+  export default CreateEmployeeForm;

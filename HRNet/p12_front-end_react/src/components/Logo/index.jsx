@@ -3,10 +3,12 @@ import logoTypo from '../../assets/logoTypo.png'
 
 function Logo() {
     return (
-        <div id='logo'>
-            <img src={logo} alt="Logo" />
-            <img src={logoTypo} alt="HR Net" />
-        </div>
+        <header id='logo'>
+            <h1>
+                <img src={logo} alt="Logo" />
+                <img src={logoTypo} alt="HR Net" />
+            </h1>
+        </header>
     )
 }
 
