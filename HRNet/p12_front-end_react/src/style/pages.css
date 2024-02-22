@@ -85,13 +85,33 @@ form h3{
     height: 30px;
     padding-left: 10px;
     padding-right: 10px;
-    
 }
 .editDate-input label {
     color: white;
     font-weight: bold;
-    padding-right: 5px;
+    width: 100px;
+    border-radius: 20px;
 }
+
+
+
+
+
+.react-date-picker__wrapper {
+    min-width: 200px;
+    background-color: white;
+    border-radius: 20px;
+}
+.react-date-picker__clear-button {
+    display: none;
+}
+.react-date-picker__calendar-button {
+    color: #5A6E07;
+}
+
+
+
+
 .edit-input select {
     width: 320px;
     height: 35px;
@@ -118,25 +138,28 @@ form h3{
 
 
 
-
-
-
-
-
-
-/*  Style du tableau d'employés  */
-table {
-    margin: 20px auto;
+/*  PLUGIN DATATABLES   */
+.DataTable_global_wrapper {
+    width: 80%;
 }
-th, td {
-    width: 120px;
+.DataTable_top, .DataTable_bottom {
     height: 30px;
-    padding: 10px;
-    text-align: center;
-    border-radius: 10px;
+    background-color: #5A6E07;
+    display:flex;
+    align-items: center;
+    font-size: 16px;
 }
-th {
+.DataTable_top input, .DataTable_top select {
+    height: 20px;
+}
+#TableHeader th {
     background-color: #92AD18;
     color: white;
-    font-weight: bold;
+    margin: 0 auto;
+    width: 80px;
+    font-size: 16px;
+}
+#TableHeader th>div {
+    justify-content: center;
+    align-items: center;
 }

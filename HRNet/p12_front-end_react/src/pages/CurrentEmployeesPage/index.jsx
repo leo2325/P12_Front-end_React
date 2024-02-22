@@ -1,7 +1,6 @@
 import React from "react";
 import { Link, useNavigate } from 'react-router-dom';
-import CurrentEmployeesArray from "../../components/CurrentEmployeesArray";
-import EmployeesList from "../../data/EmployeesList.json"; // Importez les données des employés
+import EmployeesArray from "../../components/EmployeesArray";
 
 export default function CurrentEmployeesPage() {
   
@@ -12,7 +11,7 @@ export default function CurrentEmployeesPage() {
       </Link>
       <h2>View Employees</h2>
       {/* Données des employés en tant que prop */}
-      <CurrentEmployeesArray employees={EmployeesList} />
+      <EmployeesArray />
     </div>
   );
 }

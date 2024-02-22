@@ -138,15 +138,3 @@ onSubmit()
 createNewEmployee()
     -mis à jour du state de EmployeesList.json (ajout d'un nouvel employé à la liste)
     -mis à jour du state de CurrentEmployeeArray (affichage du composant regénéré)
-
-
-sortEmployee() 
-    -appliquée au composant CurrentEmployeeArray <th>
-        -selon le <th> cliqué (par string ou number)
-        -l'icône change selon le tri
-
-searchEmployee()
-    Fonction de recherche d'un employé.
-    -> Appliqué à la barre de recherche
-    -> Agit sur CurrentEmployeeArray
-        -les employés visible doivent contenir 

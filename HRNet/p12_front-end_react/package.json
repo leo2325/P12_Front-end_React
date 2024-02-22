@@ -7,7 +7,10 @@
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "datatables.net-dt": "^2.0.0",
     "react": "^18.2.0",
+    "react-data-tables-plugin": "^1.0.0",
+    "react-date-picker": "^10.6.0",
     "react-dom": "^18.2.0",
     "react-redux": "^9.1.0",
     "react-router-dom": "^6.22.0",
@@ -17,7 +20,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "rm -rf dist && NODE_ENV=production babel src/p12_front-end_react --out-dir dist --copy-files --ignore __tests__,spec.js,test.js,__snapshots__",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -42,5 +45,4 @@
   "devDependencies": {
     "babel-cli": "^6.26.0"
   }
-  
 }

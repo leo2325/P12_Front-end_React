@@ -1,10 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
+import DatePicker from 'react-date-picker';
 // Import du tableau statesList
 import statesList from '../../data/statesList.js';
-import departmentList from '../../data/departmentList.js'
-import '../../style/pages.css'
+import departmentList from '../../data/departmentList.js';
+import '../../style/pages.css';
+import 'react-date-picker/dist/DatePicker.css';
+import 'react-calendar/dist/Calendar.css';
 
 function CreateEmployeeForm() {
+    const [birthdate, setBirthdate] = useState(new Date()); // État pour stocker la date de naissance sélectionnée
+    const [startDate, setStartDate] = useState(new Date()); // État pour stocker la date sélectionnée
+
     return (
       <div>
             <form>
@@ -30,20 +36,20 @@ function CreateEmployeeForm() {
                     </div>
                     <div className="edit-input editDate-input">
                         <label htmlFor="birthdate">Birthdate</label>
-                        <input
-                            type="date"
-                            id="birthdate" 
-                            //onChange={(e) => setBirthDate(e.target.value)}
-                        />     
+                        <DatePicker
+                            onChange={setBirthdate} // Utilisation de la fonction de mise à jour de l'état pour mettre à jour la valeur de la date de naissance
+                            value={birthdate} // Utilisation de la valeur de l'état comme valeur du DatePicker
+                        />
                     </div>
                     <div className="edit-input editDate-input">
                         <label htmlFor="startdate">Startdate</label>
-                        <input
-                            type="date"
-                            id="startdate" 
-                            //onChange={(e) => setStartDate(e.target.value)}
-                        />     
+                        <DatePicker
+                            onChange={setStartDate} // Utilisation de la fonction de mise à jour de l'état pour mettre à jour la valeur de la date
+                            value={startDate} // Utilisation de la valeur de l'état comme valeur du DatePicker
+                        />
                     </div>
+
+
                 </section>
 
                 <section id="userAdress">
@@ -75,7 +81,12 @@ function CreateEmployeeForm() {
                             >
                                 {/* map() pour génére une option pour chaque état */}
                                 {statesList.map((state, index) => (
-                                    <option key={index} value={state.abbreviation}>{state.name}</option>
+                                    <option 
+                                        key={index} 
+                                        value={state.abbreviation}
+                                    >
+                                        {state.name}
+                                    </option>
                                 ))}
                             </select>     
                         </div>
@@ -83,8 +94,10 @@ function CreateEmployeeForm() {
                         <div className="edit-input">
                             <label htmlFor="zipcode"></label>
                             <input
-                                type="text"
-                                id="zipcode" 
+                                type="number"
+                                id="zipcode"
+                                min={10000}
+                                max={99999}
                                 placeholder= 'Zip code'
                                 //onChange={(e) => setSZipCode(e.target.value)}
                             />     
@@ -103,14 +116,25 @@ function CreateEmployeeForm() {
                             >
                                 {/*map() pour générer une option pour chaque departement */}
                                 {departmentList.map((department, index) => (
-                                    <option key={index} value={department.name}>{department.name}</option>
+                                    <option 
+                                        key={index} 
+                                        value={department.name}
+                                    >
+                                        {department.name}
+                                    </option>
                                 ))}
                             </select>
                         </div>
                 </section>  
                 
                 {/* Intégrer ici le bouton submit*/}
-                <button type="submit" name="submit" id="submit">Submit</button>
+                <button 
+                    type="submit" 
+                    name="submit" 
+                    id="submit"
+                >
+                    Submit
+                </button>
 
             </form>
       </div>
