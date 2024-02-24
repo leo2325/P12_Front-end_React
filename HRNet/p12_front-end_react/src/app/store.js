@@ -1,11 +1,9 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
-import { employeeReducer } from '../redux/reducers/authReducer';
-import { arrayReducer } from '../redux/reducers/userReducer';
+import { employeeReducer } from '../redux/reducers/employeeReducer'; 
 
 // Combine reducers
 const rootReducer = combineReducers({
-  employee: employeeReducer,
-  array: arrayReducer,
+  employee: employeeReducer, 
 });
 
 // Create store

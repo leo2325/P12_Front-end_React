@@ -1,19 +1,64 @@
 import React, { useState } from "react";
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+// Import du plugIn gestionnaire de dates
 import DatePicker from 'react-date-picker';
-// Import du tableau statesList
+// Import des datas menus déroulants
 import statesList from '../../data/statesList.js';
 import departmentList from '../../data/departmentList.js';
+// Import des actions employés
+import { createEmployeeSuccess, createEmployeeFailed } from '../../redux/actions/employeeActions.jsx'
+import { useStore } from "react-redux";
 import '../../style/pages.css';
 import 'react-date-picker/dist/DatePicker.css';
 import 'react-calendar/dist/Calendar.css';
 
+
 function CreateEmployeeForm() {
-    const [birthdate, setBirthdate] = useState(new Date()); // État pour stocker la date de naissance sélectionnée
-    const [startDate, setStartDate] = useState(new Date()); // État pour stocker la date sélectionnée
+    
+    const [firstName, setFirstName] = useState('');
+    const [lastName, setLastName] = useState('');
+    const [birthdate, setBirthdate] = useState(new Date());
+    const [startDate, setStartDate] = useState(new Date());
+    const [street, setStreet] = useState('');
+    const [city, setCity] = useState('');
+    const [state, setState] = useState('');
+    const [zipCode, setZipCode] = useState('');
+    const [department, setDepartment] = useState('');
+
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
+
+    const submit = async(e) => {
+        e.preventDefault();
+        // si les champs sont tous remplis
+        if(firstName && lastName && birthdate && startDate && street && city && state && zipCode && department) {
+
+            const formattedBirthdate = birthdate.toLocaleDateString();
+            const formattedStartDate = startDate.toLocaleDateString();
+
+            dispatch(createEmployeeSuccess({
+                firstName,
+                lastName,
+                birthdate: formattedBirthdate, // Utilisation des chaînes de caractères formatées
+                startDate: formattedStartDate, // Utilisation des chaînes de caractères formatées
+                street,
+                city,
+                state,
+                zipCode,
+                department
+            }));            // Appelé le plugin modal
+            console.log(firstName, lastName, birthdate, startDate, street, city, state, zipCode, department)
+            navigate('/Employees');
+        }
+        else {
+            dispatch(createEmployeeFailed(console.log('Veuillez remplir tout les champs du formulaire')));
+        }
+    }
 
     return (
       <div>
-            <form>
+            <form onSubmit={submit}>
                
                 <section id="userName">
                     <div className="edit-input">
@@ -22,7 +67,8 @@ function CreateEmployeeForm() {
                             type="text"
                             id="firstname" 
                             placeholder= 'Firstname'
-                            //onChange={(e) => setFirstName(e.target.value)}
+                            value={firstName}
+                            onChange={(e) => setFirstName(e.target.value)}
                         />     
                     </div>
                     <div className="edit-input">
@@ -31,25 +77,24 @@ function CreateEmployeeForm() {
                             type="text"
                             id="lastname" 
                             placeholder= 'Lastname'
-                            //onChange={(e) => setLastName(e.target.value)}
+                            value={lastName}
+                            onChange={(e) => setLastName(e.target.value)}
                         />     
                     </div>
                     <div className="edit-input editDate-input">
                         <label htmlFor="birthdate">Birthdate</label>
                         <DatePicker
-                            onChange={setBirthdate} // Utilisation de la fonction de mise à jour de l'état pour mettre à jour la valeur de la date de naissance
-                            value={birthdate} // Utilisation de la valeur de l'état comme valeur du DatePicker
+                            onChange={date => setBirthdate(date)}
+                            value={birthdate}
                         />
                     </div>
                     <div className="edit-input editDate-input">
                         <label htmlFor="startdate">Startdate</label>
                         <DatePicker
-                            onChange={setStartDate} // Utilisation de la fonction de mise à jour de l'état pour mettre à jour la valeur de la date
-                            value={startDate} // Utilisation de la valeur de l'état comme valeur du DatePicker
+                            onChange={date => setStartDate(date)}
+                            value={startDate}
                         />
                     </div>
-
-
                 </section>
 
                 <section id="userAdress">
@@ -60,7 +105,8 @@ function CreateEmployeeForm() {
                                 type="text"
                                 id="street" 
                                 placeholder= 'Street'
-                                //onChange={(e) => setStreet(e.target.value)}
+                                value={street}
+                                onChange={(e) => setStreet(e.target.value)}
                             />     
                         </div>
                         <div className="edit-input">
@@ -69,7 +115,8 @@ function CreateEmployeeForm() {
                                 type="text"
                                 id="city" 
                                 placeholder= 'City'
-                                //onChange={(e) => setCity(e.target.value)}
+                                value={city}
+                                onChange={(e) => setCity(e.target.value)}
                             />     
                         </div>
                         <div className="edit-input">
@@ -77,7 +124,8 @@ function CreateEmployeeForm() {
                             <select
                                 type="text"
                                 id="state" 
-                                //onChange={(e) => setState(e.target.value)}
+                                value={state}
+                                onChange={(e) => setState(e.target.value)}
                             >
                                 {/* map() pour génére une option pour chaque état */}
                                 {statesList.map((state, index) => (
@@ -99,7 +147,8 @@ function CreateEmployeeForm() {
                                 min={10000}
                                 max={99999}
                                 placeholder= 'Zip code'
-                                //onChange={(e) => setSZipCode(e.target.value)}
+                                value={zipCode}
+                                onChange={(e) => setZipCode(e.target.value)}
                             />     
                         </div>
                 </section>
@@ -112,7 +161,8 @@ function CreateEmployeeForm() {
                             <select
                                 type="text"
                                 id="department"
-                                //onChange={(e) => setDepartment(e.target.value)}
+                                value={department}
+                                onChange={(e) => setDepartment(e.target.value)}
                             >
                                 {/*map() pour générer une option pour chaque departement */}
                                 {departmentList.map((department, index) => (

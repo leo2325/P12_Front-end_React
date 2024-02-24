@@ -1,14 +1,33 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { DataTable } from "react-data-tables-plugin";
-import { Link, useNavigate } from 'react-router-dom';
-import '../../style/pages.css'
+import { useSelector } from 'react-redux';
+import '../../style/pages.css';
 
-const EmployeesArray = ({ employees }) => {
+const EmployeesArray = () => {
     
+    // Charger les données initiales depuis le localStorage ou initialiser avec un tableau vide
+    const [storedData, setStoredData] = useState(() => {
+        const savedData = JSON.parse(localStorage.getItem("employeesData")) || [];
+        return savedData;
+    });
+
+    // Utiliser useSelector pour extraire la liste d'employés du state Redux
+    const employees = useSelector(state => state.employee.employees);
+
+    // Mettre à jour storedData lorsque les employés changent
+    useEffect(() => {
+        setStoredData(employees);
+    }, [employees]);
+
+    // Mettre à jour le localStorage à chaque changement de données
+    useEffect(() => {
+        localStorage.setItem("employeesData", JSON.stringify(storedData));
+    }, [storedData]);
+
     const columns = [
         {
             title: "First Name",
-             data: "firstName",
+            data: "firstName",
         },
         {
             title: "Last Name",
@@ -16,71 +35,39 @@ const EmployeesArray = ({ employees }) => {
         },
         {
             title: "Start Date",
-            data: "StartDate",
+            data: "startDate",
         },
         {
             title: "Date of Birth",
-            data: "BirthDate",
+            data: "birthdate",
         },
         {
             title: "Department",
-            data: "Department",
+            data: "department",
         },
         {
             title: "Street",
-            data: "Street",
+            data: "street",
         },
         {
             title: "City",
-            data: "City",
+            data: "city",
         },
         {
             title: "State",
-            data: "State",
+            data: "state",
         },
         {
             title: "Zip Code",
-            data: "ZipCode",
+            data: "zipCode",
         },
     ];
 
-
-    const data = [
-        {
-            id: "1",
-            firstName: "John",
-            lastName: "Doe",
-            StartDate: "",
-            BirthDate: "",
-            Department: "Sale",
-            Street:"1",
-            City:"Paris",
-            State: "AL",
-            ZipCode: "75001",
-          
-        },
-        {
-            id: "2",
-            firstName: "Jane",
-            lastName: "Smith",
-            StartDate: "",
-            BirthDate: "",
-            Department: "Legal",
-            Street:"2",
-            City:"New York",
-            State: "DC",
-            ZipCode: "002",
-          
-        },
-      ];
-
     return (
-        
         <div>
-            <DataTable columns={columns} data={data} />
+            <DataTable columns={columns} data={storedData} />
         </div>
-    
     );
-  }
-  
-  export default EmployeesArray;
+}
+
+export default EmployeesArray;
