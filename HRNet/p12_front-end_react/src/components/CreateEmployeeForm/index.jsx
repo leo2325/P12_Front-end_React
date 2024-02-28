@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+//imports des plugins
 import DatePicker from 'react-date-picker';
+import { Plugin } from 'simple-component-library_react-modale-plugin_leo-timbert';
+//imports des listes select
 import statesList from '../../data/statesList.js';
 import departmentList from '../../data/departmentList.js';
 import { createEmployeeSuccess, createEmployeeFailed } from '../../redux/actions/employeeActions.jsx';
@@ -45,9 +48,13 @@ function CreateEmployeeForm() {
                 zipCode,
                 department
             }));
-
-            console.log(firstName, lastName, birthdate, startDate, street, city, state, zipCode, department);
+            Plugin();
             navigate('/Employees');
+
+            // vérification des données du nouvel employé + vérification de l'intégral du tableau d'employés.
+            console.log(employees);
+            console.log("Dernier employé ajouté:" + firstName, lastName, birthdate, startDate, street, city, state, zipCode, department);
+
         } else {
             dispatch(createEmployeeFailed('Veuillez remplir tous les champs du formulaire'));
         }
@@ -117,11 +124,12 @@ function CreateEmployeeForm() {
                         />
                     </div>
                     <div className="edit-input">
-                        <label htmlFor="state"></label>
+                        <label htmlFor="state" aria-label="state"></label>
                         <select
                             type="text"
                             id="state"
                             value={state}
+                            aria-labelledby="state"
                             onChange={(e) => setState(e.target.value)}
                         >
                             {statesList.map((state, index) => (
@@ -153,11 +161,12 @@ function CreateEmployeeForm() {
                     <h3>Department : </h3>
 
                     <div className="edit-input">
-                        <label htmlFor="dpartment"></label>
+                        <label htmlFor="department" aria-label="department"></label>
                         <select
                             type="text"
                             id="department"
                             value={department}
+                            aria-labelledby="department"
                             onChange={(e) => setDepartment(e.target.value)}
                         >
                             {departmentList.map((department, index) => (
@@ -176,6 +185,7 @@ function CreateEmployeeForm() {
                     type="submit"
                     name="submit"
                     id="submit"
+                    aria-label="submit new employee"
                 >
                     Submit
                 </button>

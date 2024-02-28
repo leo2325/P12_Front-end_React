@@ -8,7 +8,7 @@ export default function CreateEmployeePage() {
   return (
     <div className="pagesContainer">
       <Link to='/Employees'>
-        <button className="redirectionBtn">View employees</button>
+        <button className="redirectionBtn" aria-label="View employees " title="View employees">View employees</button>
       </Link>
       <h2>Create Employee</h2>
       <CreateEmployeeForm />

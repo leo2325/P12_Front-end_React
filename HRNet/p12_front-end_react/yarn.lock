@@ -9855,6 +9855,16 @@ signal-exit@^4.0.1:
   resolved "https://registry.npmjs.org/signal-exit/-/signal-exit-4.1.0.tgz"
   integrity sha512-bzyZ1e88w9O1iNJbKnOlvYTrWPDl46O1bG0D3XInv+9tkPrxrN8jUUTiFlDkkmKWgn1M6CfIA13SuGqOa9Korw==
 
+simple-component-library_react-modale-plugin_leo-timbert@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.npmjs.org/simple-component-library_react-modale-plugin_leo-timbert/-/simple-component-library_react-modale-plugin_leo-timbert-0.1.0.tgz"
+  integrity sha512-CQ84HzSeg47fyan2MXcjXc8Iur+fb2nYwMpFB8wuP9IZTl23FmJIX426+NSk2evgZrvZ2zDvZeqU1ncmZXI7Ug==
+  dependencies:
+    "@testing-library/jest-dom" "^5.17.0"
+    "@testing-library/react" "^13.4.0"
+    "@testing-library/user-event" "^13.5.0"
+    web-vitals "^2.1.4"
+
 sisteransi@^1.0.5:
   version "1.0.5"
   resolved "https://registry.npmjs.org/sisteransi/-/sisteransi-1.0.5.tgz"

@@ -11,14 +11,16 @@
     width: 100%;
     height: 80px;
     margin: 40px auto;  
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
 }
-#logo img {
-    height: 80px;
+#logo img{
+    width: auto;
+    height: 50px;
 }
-
-
-
-
 
 h2{
     width: 350px;
@@ -33,19 +35,16 @@ h2{
     width: 200px;
     height: 70px;
     color: white;
-    background-color: #92AD18;
-    box-shadow: 3px 3px #5A6E07; 
-    border: .5px solid #5A6E07;
+    background-color: #5A6E07; 
+    box-shadow: 3px 3px #92AD18;
+    border: .5px solid #92AD18;
     border-radius: 30px;
     font-size: 20px;
     font-weight: bolder;
 }
 
-
-
-
-
 form {
+    background-color: #5A6E07;
     width: 400px;
     margin:10px auto;
     border: 2px solid #5A6E07;
@@ -87,15 +86,17 @@ form h3{
     padding-right: 10px;
 }
 .editDate-input label {
-    color: white;
+    background-color: white;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #5A6E07;
     font-weight: bold;
     width: 100px;
+    border: 1px solid black;
     border-radius: 20px;
 }
-
-
-
-
 
 .react-date-picker__wrapper {
     min-width: 200px;
@@ -108,16 +109,15 @@ form h3{
 .react-date-picker__calendar-button {
     color: #5A6E07;
 }
-
-
-
+.react-date-picker__button {
+    display: none;
+}
 
 .edit-input select {
     width: 320px;
     height: 35px;
     padding-left: 5px;
     padding-right: 10px;
-
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -127,16 +127,14 @@ form h3{
     padding: 5px;
     width: 100px;
     height: 40px;
-    color: white;
-    background-color: #92AD18;
-    box-shadow: 3px 3px #5A6E07; 
-    border: .5px solid #5A6E07;
+    color: #5A6E07;
+    background-color: white;
+    box-shadow: 3px 3px #92AD18;
+    border: .5px solid #92AD18;
     border-radius: 30px;
     font-size: 16px;
     font-weight: bolder;
 }
-
-
 
 /*  PLUGIN DATATABLES   */
 .DataTable_global_wrapper {
@@ -162,4 +160,9 @@ form h3{
 #TableHeader th>div {
     justify-content: center;
     align-items: center;
+}
+#TableHeader th button {
+    background-color: #5A6E07;
+    padding: 5px;
+    border-radius: 10px;
 }
