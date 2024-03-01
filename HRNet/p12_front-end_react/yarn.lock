@@ -9865,6 +9865,16 @@ simple-component-library_react-modale-plugin_leo-timbert@^0.1.6:
     "@testing-library/user-event" "^13.5.0"
     web-vitals "^2.1.4"
 
+simple-component-library-react-modale-plugin-leo@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.npmjs.org/simple-component-library-react-modale-plugin-leo/-/simple-component-library-react-modale-plugin-leo-0.1.1.tgz"
+  integrity sha512-hweoYP1azhmpk+USZtkm/6vwg1ICuYWWc2dWb0j9nqP4PpWUh7sQlSdqb1yHZCUkA/SWIc1YwXyA9jLPm3aoHA==
+  dependencies:
+    "@testing-library/jest-dom" "^5.17.0"
+    "@testing-library/react" "^13.4.0"
+    "@testing-library/user-event" "^13.5.0"
+    web-vitals "^2.1.4"
+
 sisteransi@^1.0.5:
   version "1.0.5"
   resolved "https://registry.npmjs.org/sisteransi/-/sisteransi-1.0.5.tgz"

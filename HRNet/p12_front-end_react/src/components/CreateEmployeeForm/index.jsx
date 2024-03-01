@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 // imports des plugins
 import DatePicker from 'react-date-picker';
-import Plugin from 'simple-component-library_react-modale-plugin_leo-timbert';
+import Plugin from 'simple-component-library-react-modale-plugin-leo';
 // imports des listes select
 import statesList from '../../data/statesList.js';
 import departmentList from '../../data/departmentList.js';
@@ -66,7 +66,7 @@ function CreateEmployeeForm() {
             <form onSubmit={submit}>
                 { modale && <Plugin 
                     message="Employee created !" 
-                    closeFunction={ ( ) => navigate('/Employees') } /> 
+                    closeFunction={ ( ) => navigate('/Employees') } containerId="root"/> 
                 }
                 <section id="userName">
                     <div className="edit-input">
