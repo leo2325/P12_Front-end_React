@@ -66,7 +66,7 @@ function CreateEmployeeForm() {
             <form onSubmit={submit}>
                 { modale && <Plugin 
                     message="Employee created !" 
-                    closeFunction={ ( ) => navigate('/Employees') } containerId="root"/> 
+                    closeFunction={ ( ) => navigate('/Employees') }/> 
                 }
                 <section id="userName">
                     <div className="edit-input">
