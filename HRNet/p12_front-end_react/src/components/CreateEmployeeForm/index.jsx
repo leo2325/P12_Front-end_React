@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-//imports des plugins
+// imports des plugins
 import DatePicker from 'react-date-picker';
-import { Plugin } from 'simple-component-library_react-modale-plugin_leo-timbert';
-//imports des listes select
+import Plugin from 'simple-component-library_react-modale-plugin_leo-timbert';
+// imports des listes select
 import statesList from '../../data/statesList.js';
 import departmentList from '../../data/departmentList.js';
 import { createEmployeeSuccess, createEmployeeFailed } from '../../redux/actions/employeeActions.jsx';
-import { useStore } from "react-redux";
+// imports des styles
 import '../../style/pages.css';
 import 'react-date-picker/dist/DatePicker.css';
 import 'react-calendar/dist/Calendar.css';
@@ -23,6 +23,8 @@ function CreateEmployeeForm() {
     const [state, setState] = useState('');
     const [zipCode, setZipCode] = useState('');
     const [department, setDepartment] = useState('');
+    
+    const [modale, setModaleVisibility] = useState(false);
 
     const navigate = useNavigate();
     const dispatch = useDispatch();
@@ -48,8 +50,7 @@ function CreateEmployeeForm() {
                 zipCode,
                 department
             }));
-            Plugin();
-            navigate('/Employees');
+            setModaleVisibility(true);
 
             // vérification des données du nouvel employé + vérification de l'intégral du tableau d'employés.
             console.log(employees);
@@ -63,7 +64,10 @@ function CreateEmployeeForm() {
     return (
         <div>
             <form onSubmit={submit}>
-
+                { modale && <Plugin 
+                    message="Employee created !" 
+                    closeFunction={ ( ) => navigate('/Employees') } /> 
+                }
                 <section id="userName">
                     <div className="edit-input">
                         <label htmlFor="firstname"></label>

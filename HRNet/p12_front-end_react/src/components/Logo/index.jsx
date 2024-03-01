@@ -1,5 +1,4 @@
 import logo from '../../assets/logo.WebP'
-import logoTypo from '../../assets/logoTypo.WebP'
 
 function Logo() {
     return (
