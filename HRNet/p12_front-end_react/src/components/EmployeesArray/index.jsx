@@ -19,7 +19,7 @@ const EmployeesArray = () => {
         setStoredData(employees);
     }, [employees]);
 
-    // Mettre à jour le localStorage à chaque changement de données
+    // Mettre à jour le localStorage à chaque changement de données - à retoucher si on utilise un backend
     useEffect(() => {
         localStorage.setItem("employeesData", JSON.stringify(storedData));
     }, [storedData]);
