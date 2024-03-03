@@ -1,4 +1,4 @@
-import { CREATE_EMPLOYEE_SUCCESS, CREATE_EMPLOYEE_FAIL, ADD_EMPLOYEE } from "../actions/employeeActions.jsx";
+import { CREATE_EMPLOYEE_SUCCESS, CREATE_EMPLOYEE_FAIL } from "../actions/employeeActions.jsx";
 
 /* Initial state of authentication */
 const initialState = {
@@ -84,12 +84,6 @@ export const employeeReducer = (state = initialState, action) => {
                 ...state,
                 status: "FAILED",
                 error: null,
-            }
-
-        case ADD_EMPLOYEE:
-            return {
-                ...state,
-                employees: [...state.employees, action.payload]
             }
 
         default:

@@ -15,12 +15,3 @@ export const createEmployeeFailed = (error) => {
         payload: error,
     }
 }
-
-export const addEmployee = (employee) => {
-    return {
-        type: ADD_EMPLOYEE,
-        payload: employee,
-    }
-}
-
-
